@@ -80,6 +80,7 @@ body{
    background-color: black;
    border: 2px solid white;
    position: relative;
+   box-shadow: 14px 13px 37px -13px rgba(0,0,0,0.75);
 }
 
 .analogic_hr,
