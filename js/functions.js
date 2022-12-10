@@ -1,5 +1,5 @@
-const alternate = document.getElementById('alternate');
-const modes = document.getElementById('darkMode')
+const body = document.querySelector('body');
+const dark = document.getElementById('dark');
 const btnTroca = document.getElementById('btnTroca');
 const digital = document.getElementById('digital');
 const analogic = document.getElementById('analogic');
@@ -11,6 +11,7 @@ const digitSecon = document.getElementById('digitSecon');
 const analogicHour = document.getElementById('analogic_hr');
 const analogicMinu = document.getElementById('analogic_min');
 const analogicSecon = document.getElementById('analogic_sec');
+const analogicPeriod = document.getElementById('analogic_period');
 
 btnTroca.addEventListener("click", () => {
    if(btnTroca.innerText === 'Analógico'){
@@ -36,21 +37,23 @@ setInterval(() => {
 
    digitHour.innerText = hr;
    digitMinu.innerText = mn;
-   digitSecon.innerText = sc;
+   digitSecon.innerHTML = `${sc}<span id="period"></span>`;
+   const period = document.getElementById('period');
+   period.innerText = hour > 12 ? 'PM': 'AM';
 
    analogicHour.style.rotate = `${360/12 * hour}deg`;
    analogicMinu.style.rotate = `${360/60 * minu}deg`;
    analogicSecon.style.rotate = `${360/60 * second}deg`;
+   analogicPeriod.innerText = hour > 12 ? 'PM': 'AM';
 })
-const alt = (e)=>{
-   let checked = modes.checked;
-   const body = document.querySelector('body');
-   if(checked == true){
-      console.log(checked)
+dark.addEventListener('click', (e) => {
+   if(e.target.innerHTML === "Dark Mode: off"){
+      e.target.innerText = "Dark Mode: on";
+      body.classList.toggle('active');
+   } else {
+      e.target.innerText = "Dark Mode: off";
+      body.classList.toggle('active');
    }
-   body.classList.toggle('active')
-   alternate.classList.toggle('active');
-}
-alternate.addEventListener('click', alt);
+})
 
 

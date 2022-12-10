@@ -8,9 +8,8 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <input type="checkbox" id="darkMode">
-   <button class="alternate" id="alternate" for="darkMode"></button>
    <div class="container">
+      <button id="dark">Dark Mode: off</button>
       <button class="btnType" id="btnTroca">Analógico</button>
       <div class="digital_clock" id="digital">
          <h1 class="digital_hr" id="digitHour">24</h1>
@@ -24,6 +23,11 @@
             <div id="analogic_hr" class="analogic_hr" style="--bgclr: white"><span></span></div>
             <div id="analogic_min" class="analogic_min" style="--bgclr: gray"><span></span></div>
             <div id="analogic_sec" class="analogic_sec" style="--bgclr: red"><span></span></div>
+            <h1 id="tophour">12</h1>
+            <h1 id="righthour">3</h1>
+            <h1 id="bottomhour">6</h1>
+            <h1 id="lefthour">9</h1>
+            <h1 id="analogic_period">AM</h1>
          </div>
       </div>
    </div>
