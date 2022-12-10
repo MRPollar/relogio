@@ -14,6 +14,27 @@ body{
    background: linear-gradient(342deg, rgba(119,40,0,1) 0%, rgba(255,165,0,1) 100%);
 }
 
+body::before{
+   content: '';
+   position: absolute;
+   width: 0;
+   height: 0;
+   left: 0;
+   top: 0;
+   opacity: 0;
+   border-radius: 0 50% 50% 50%;
+   background: rgb(0,0,0);
+   background: linear-gradient(342deg, rgba(0,0,0,1) 0%, rgba(41,41,41,1) 100%);
+   transition: .3s;
+}
+
+body.active::before{
+   opacity: 1;
+   width: 100%;
+   height: 100%;
+   border-radius: 0;
+}
+
 .container{
    margin: 0 auto;
    width: 100%;
@@ -21,6 +42,42 @@ body{
    max-width: 1080px;
    padding: 0 2%;
    position: relative;
+}
+
+#darkMode{
+   display: none;
+}
+
+.alternate{
+   display: block;
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   border-radius: 30px;
+   width: 80px;
+   height: 40px;
+   background-color: white;
+   border: 3px solid black;
+   cursor: pointer;
+}
+.alternate::before{
+   content: '';
+   width: 50%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: absolute;
+   background-color: black;
+   border-radius: 50%;
+   transition: .3s;
+}
+.alternate.active{
+   background-color: black;
+   border-color: white;
+}
+.alternate.active::before{
+   left: 50%;
+   background-color: white;
 }
 
 .btnType{

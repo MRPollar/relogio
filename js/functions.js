@@ -1,3 +1,5 @@
+const alternate = document.getElementById('alternate');
+const modes = document.getElementById('darkMode')
 const btnTroca = document.getElementById('btnTroca');
 const digital = document.getElementById('digital');
 const analogic = document.getElementById('analogic');
@@ -40,5 +42,15 @@ setInterval(() => {
    analogicMinu.style.rotate = `${360/60 * minu}deg`;
    analogicSecon.style.rotate = `${360/60 * second}deg`;
 })
+const alt = (e)=>{
+   let checked = modes.checked;
+   const body = document.querySelector('body');
+   if(checked == true){
+      console.log(checked)
+   }
+   body.classList.toggle('active')
+   alternate.classList.toggle('active');
+}
+alternate.addEventListener('click', alt);
 
 
