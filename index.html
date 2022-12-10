@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Relogio</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="container">
+      <button class="btnType" id="btnTroca">Analógico</button>
+      <div class="digital_clock" id="digital">
+         <h1 class="digital_hr" id="digitHour">24</h1>
+         <h1>:</h1>
+         <h1 class="digital_min" id="digitMinu">00</h1>
+         <h1>:</h1>
+         <h1 class="digital_sec" id="digitSecon">00</h1>
+      </div>
+      <div class="analogic_clock" id="analogic" style="display: none;">
+         <div class="container_point">
+            <div id="analogic_hr" class="analogic_hr" style="--bgclr: white"><span></span></div>
+            <div id="analogic_min" class="analogic_min" style="--bgclr: gray"><span></span></div>
+            <div id="analogic_sec" class="analogic_sec" style="--bgclr: red"><span></span></div>
+         </div>
+      </div>
+   </div>
+   <script src="js/functions.js"></script>
+</body>
+</html>
